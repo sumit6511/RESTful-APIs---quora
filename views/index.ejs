@@ -1,0 +1,24 @@
+<%- include("includes/head", { title: "All Posts" }) %>
+<body>
+   <div class="container mb-5">
+      <h2>Quora Posts</h2>
+      <hr>
+      <% for (post of posts) { %>
+         <div class="card">
+            <div class="post card-body">
+               <h5 class="user card-title user">@<%= post.username %></h5>
+               <p class="content card-text"><%= post.content %></p>
+               <a href="http://localhost:8080/posts/<%= post.id %>" class="btn btn-outline-dark btn-sm rounded-pill">View in Detail</a>
+               <a href="http://localhost:8080/posts/<%= post.id %>/edit" class="btn btn-dark btn-sm rounded-pill ms-2 d-inline">Edit</a>
+               <form method="post" class="d-inline ms-5" action="/posts/<%= post.id %>?_method=DELETE">
+                  <button type="submit" class="btn btn-danger btn-sm position-absolute bottom-0 end-0">Delete</button>
+               </form>
+            </div>
+         </div>
+      <% } %>
+      <br>
+      <a href="http://localhost:8080/posts/new" class="btn btn-warning">Create New Post</a>
+   </div>
+   <%- include("includes/foot") %>
+</body>
+</html>

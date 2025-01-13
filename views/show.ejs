@@ -1,0 +1,17 @@
+<%- include("includes/head", { title: "Post in Detail"}) %>
+<body>
+   <div class="container mt-3">
+      <h2>Here's your post in detail.</h2>
+      <p>Post id: <%= post.id %> </p>
+      <div class="card">
+         <div class="card-body post">
+            <h5 class="user card-title">@<%= post.username %></h5>
+            <p class="content card-text"><%= post.content %></p>
+         </div>
+      </div>
+      <a href="http://localhost:8080/posts" class="btn btn-outline-secondary btn-sm mt-3">Back to all posts</a>
+   </div>
+
+   <%- include("includes/foot") %>
+</body>
+</html>

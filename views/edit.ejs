@@ -1,0 +1,13 @@
+<%- include("includes/head", { title: "Edit Post" }) %>
+<body>
+   <div class="container mt-3">
+      <h2>Edit your post</h2>
+      <p><b>Post id: <%= post.id %> <br> User: <%= post.username %></b></p>
+      <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+         <textarea class="form-control" name="content" style="height: 150px;"><%= post.content %></textarea>
+         <button type="submit" class="btn btn-success btn-sm mt-3">Update Post</button>
+      </form>
+   </div>
+   <%- include("includes/foot") %>
+</body>
+</html>

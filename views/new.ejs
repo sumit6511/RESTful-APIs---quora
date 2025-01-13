@@ -1,0 +1,16 @@
+<%- include ("includes/head", { title: "Create Post" }) %>
+<body>
+   <form method="post" action="/posts"  class=" container mt-3">
+      <h2>Create a new post </h2>
+      <div class="mb-3">
+         <input type="text" class="form-control" name="username" placeholder="enter username">
+      </div>
+      <div class="mb-3">
+         <textarea  class="form-control" name="content" placeholder="write yout post" style="height: 100px;"></textarea>
+      </div>
+      <button type="submit" class="btn btn-outline-danger">Create Post</button>
+   </form>
+
+   <%- include("includes/foot") %>
+</body>
+</html>
